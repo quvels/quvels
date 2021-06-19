@@ -1,0 +1,39 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/quvels/src",
+  "monorepo": true,
+  "root": "apps/quvels",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/quvels/tsconfig.app.json"
+  },
+  "projects": {
+    "quvels": {
+      "type": "application",
+      "root": "apps/quvels",
+      "entryFile": "main",
+      "sourceRoot": "apps/quvels/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/quvels/tsconfig.app.json"
+      }
+    },
+    "gateway": {
+      "type": "application",
+      "root": "apps/gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gateway/tsconfig.app.json"
+      }
+    },
+    "auth": {
+      "type": "application",
+      "root": "apps/auth",
+      "entryFile": "main",
+      "sourceRoot": "apps/auth/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/auth/tsconfig.app.json"
+      }
+    }
+  }
+}
