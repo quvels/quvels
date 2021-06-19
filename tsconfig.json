@@ -11,6 +11,13 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
-    "paths": {}
+    "paths": {
+      "@app/auth-client": [
+        "libs/auth-client/src"
+      ],
+      "@app/auth-client/*": [
+        "libs/auth-client/src/*"
+      ]
+    }
   }
 }

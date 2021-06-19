@@ -23,6 +23,7 @@
   "dependencies": {
     "@nestjs/common": "^7.6.15",
     "@nestjs/core": "^7.6.15",
+    "@nestjs/microservices": "^7.6.18",
     "@nestjs/platform-express": "^7.6.15",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
@@ -67,7 +68,12 @@
     "coverageDirectory": "./coverage",
     "testEnvironment": "node",
     "roots": [
-      "<rootDir>/apps/"
-    ]
+      "<rootDir>/apps/",
+      "<rootDir>/libs/"
+    ],
+    "moduleNameMapper": {
+      "@app/auth-client/(.*)": "<rootDir>/libs/auth-client/src/$1",
+      "@app/auth-client": "<rootDir>/libs/auth-client/src"
+    }
   }
 }
