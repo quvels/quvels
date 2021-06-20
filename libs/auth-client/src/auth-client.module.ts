@@ -6,7 +6,7 @@ import { AuthClientService } from './auth-client.service';
   imports: [
     ClientsModule.register([
       {
-        name: 'AUTH_SERVICE', transport: Transport.TCP
+        name: 'AUTH_SERVICE', transport: Transport.TCP, options: { port: 3001 }
       },
     ]),
   ],

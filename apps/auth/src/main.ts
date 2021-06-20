@@ -1,14 +1,29 @@
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AuthModule } from './auth.module';
 
 async function bootstrap() {
-  const app = await NestFactory.createMicroservice<MicroserviceOptions>(
-    AuthModule,
-    {
-      transport: Transport.TCP,
-    },
-  );
-  app.listen(() => console.log('Auth is listening'));
+
+  const app = await NestFactory.create(AuthModule);
+  const microservice = app.connectMicroservice({
+    transport: Transport.TCP,
+    options: {
+      host: '0.0.0.0',
+      port: 3001
+    }
+  });
+
+  const config = new DocumentBuilder()
+    .setTitle('Auth microservice')
+    .setDescription('The auth API description')
+    .setVersion('1.0')
+    .addTag('auth')
+    .build();
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document);
+
+  await app.startAllMicroservicesAsync();
+  await app.listen(3002);
 }
 bootstrap();

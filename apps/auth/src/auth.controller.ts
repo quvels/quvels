@@ -11,6 +11,7 @@ export class AuthController {
     return this.authService.getHello();
   }
 
+  @Get('healthCheck')
   @MessagePattern({ cmd: 'healthCheck' })
   healthCheck(): string {
     return `Ok`;
