@@ -15,10 +15,10 @@ async function bootstrap() {
   });
 
   const config = new DocumentBuilder()
-    .setTitle('Auth microservice')
-    .setDescription('The auth API description')
+    .setTitle('Project management microservice')
+    .setDescription('Project managemen API description')
     .setVersion('1.0')
-    .addTag('auth')
+    .addTag('project-management')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
