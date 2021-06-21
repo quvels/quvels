@@ -1,0 +1,42 @@
+services:
+
+    quvels-auth:
+        container_name: quvels_auth
+        image: quvels_auth:0.0.1
+        build:
+            context: .
+            target: development
+            dockerfile: ./apps/auth/Dockerfile
+        command: npm run start:dev auth
+        ports:
+            - 3001:3001
+            - 3002:3002
+        networks:
+            - quvels-network
+        volumes:
+            - ./:/usr/src/app/
+            - /usr/src/app/node_modules
+        restart: unless-stopped
+
+    quvels:
+        container_name: quvels
+        image: quvels:0.0.1
+        build:
+            context: .
+            target: development
+            dockerfile: ./apps/quvels/Dockerfile
+        command: npm run start:debug-container 
+        ports:
+            - 3000:3000
+            - 9229:9229
+        networks:
+            - quvels-network
+        volumes:
+            - ./:/usr/src/app/
+            - /usr/src/app/node_modules
+        restart: unless-stopped
+        depends_on: 
+            - quvels-auth
+            
+networks:
+    quvels-network:

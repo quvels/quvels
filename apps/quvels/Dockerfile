@@ -6,10 +6,10 @@ COPY ./*.json ./
 
 RUN npm install --only=development
 
-COPY ./apps/auth ./apps/auth
+COPY . .
 
-RUN npm run build auth
+RUN npm run build
 
-EXPOSE 3001 3002
+EXPOSE 3000
 
-CMD ["node", "dist/apps/auth/main"]
+CMD ["node", "dist/apps/quvels/main"]
