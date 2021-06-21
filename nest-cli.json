@@ -43,6 +43,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/auth-client/tsconfig.lib.json"
       }
+    },
+    "project-management": {
+      "type": "application",
+      "root": "apps/project-management",
+      "entryFile": "main",
+      "sourceRoot": "apps/project-management/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/project-management/tsconfig.app.json"
+      }
     }
   }
 }
