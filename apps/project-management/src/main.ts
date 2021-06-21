@@ -10,7 +10,7 @@ async function bootstrap() {
     transport: Transport.TCP,
     options: {
       host: '0.0.0.0',
-      port: 3001
+      port: 3003
     }
   });
 
@@ -24,6 +24,6 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   await app.startAllMicroservicesAsync();
-  await app.listen(3003);
+  await app.listen(3004);
 }
 bootstrap();
