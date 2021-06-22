@@ -76,7 +76,9 @@
     ],
     "moduleNameMapper": {
       "@app/auth-client/(.*)": "<rootDir>/libs/auth-client/src/$1",
-      "@app/auth-client": "<rootDir>/libs/auth-client/src"
+      "@app/auth-client": "<rootDir>/libs/auth-client/src",
+      "@app/project-management-client/(.*)": "<rootDir>/libs/project-management-client/src/$1",
+      "@app/project-management-client": "<rootDir>/libs/project-management-client/src"
     }
   }
 }
