@@ -17,6 +17,12 @@
       ],
       "@app/auth-client/*": [
         "libs/auth-client/src/*"
+      ],
+      "@app/project-management-client": [
+        "libs/project-management-client/src"
+      ],
+      "@app/project-management-client/*": [
+        "libs/project-management-client/src/*"
       ]
     }
   }

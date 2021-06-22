@@ -52,6 +52,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/project-management/tsconfig.app.json"
       }
+    },
+    "project-management-client": {
+      "type": "library",
+      "root": "libs/project-management-client",
+      "entryFile": "index",
+      "sourceRoot": "libs/project-management-client/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/project-management-client/tsconfig.lib.json"
+      }
     }
   }
 }
